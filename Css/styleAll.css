@@ -1,0 +1,31 @@
+.body-style{
+    background-color: rgb(153, 229, 245) !important;
+}
+
+.navbar-style{
+    font-size: 15px;
+    font-family: 'Poppins' , sans-serif;
+    font-weight: 800;    
+    background-color: rgba(64, 68, 72, 0.9);
+    color: black;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.5),
+        1px -1px 0 rgba(255, 255, 255, 0.5),
+        -1px 1px 0 rgba(255, 255, 255, 0.5),
+        1px 1px 0 rgba(255, 255, 255, 0.5);   
+}
+
+.profil-style{    
+    width: 35px; /* Navbar yüksekliğini bozmayacak ideal boyut */
+    height: 35px;
+    border: 2px solid white; /* İnce beyaz çerçeve */
+    border-radius: 50%; /* Tam yuvarlak yapması için (rounded-circle yerine) */
+    object-fit: cover; /* Resmin orijinali kare değilse bozulmasını önler */
+    margin-right: 10px; /* Yazıyla arasına boşluk bırakır (me-2 yerine) */
+}
+
+.text-style{
+    background-color: aliceblue;
+    font-family: 'Poppins' , sans-serif;
+    border: 3px groove rgb(170, 34, 34);    
+}
