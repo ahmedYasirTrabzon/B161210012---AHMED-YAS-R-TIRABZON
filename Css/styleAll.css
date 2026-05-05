@@ -1,5 +1,10 @@
 .body-style{
-    background-color: rgb(153, 229, 245) !important;
+    background-color: rgb(153, 229, 245);
+}
+
+.login-kutu-bg{
+    background-color: rgba(153, 230, 245, 0.7);
+    border-radius: 15px;
 }
 
 .navbar-style{
@@ -42,4 +47,13 @@
 
 .footer-style{
     background-color: rgba(51, 8, 8, 0.611);
+}
+
+.sabit-arka-plan{
+    background-image: url(../img/Sabit\ Arka\ plan.jpg);
+    background-attachment: fixed;
+    background-size: auto 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgb(153, 229, 245)
 }
