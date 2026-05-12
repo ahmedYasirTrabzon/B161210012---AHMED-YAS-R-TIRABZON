@@ -20,7 +20,7 @@
         <title>İletişim</title>
     </head>
 
-    <body class="body-style d-flex flex-column min-vh-100">
+    <body class="body-style d-flex flex-column min-vh-100" id="iletisim-arka-plan">
 
         <!--Menü-->
         <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-lg navbar-style">
@@ -68,119 +68,183 @@
 
         <section class="flex-grow-1 justify-content-center align-items-center ">
             <div class="container">
-                <div class="row my-5">
-                    <div class="col-12">
-                        <h2 class="text-center">İletişim Bİlgileri</h2>
+                <div class="row my-2 g-4">
+                    <div class="col-12 mb-1">
+                        <div class="tek-div-bg text-white p-3 h-100">
+                            <h2 class="text-center">İletişim Bİlgileri</h2>
+                        </div>
                     </div>
                     <form>
-                        <div class="row mb-5">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3 px-4">
-                                <label for="isim" class="form-label text-uppercase fw-bold">ad / soyad :</label>
-                                <input
-                                    type="text"
-                                    name="adSoyad"
-                                    id="isim"
-                                    class="form-control"
-                                    placeholder="Adınızı ve Soyadınızı Giriniz"
-                                    aria-describedby="helpId"
-                                />
-                                <small id="helpId" class="text-body-secondary form-text">Zorunlu Alan!!</small>
+                        <div class="row mb-4 g-4">
+                            <div class="col-12 col-md-12 col-lg-4 mb-1">
+                                <div class="tek-div-bg p-3 h-100 text-white">
+                                    <label for="isim" class="form-label text-uppercase fw-bold">ad / soyad :</label>
+                                    <input
+                                        type="text"
+                                        name="adSoyad"
+                                        id="isim"
+                                        class="form-control"
+                                        placeholder="Adınızı ve Soyadınızı Giriniz"
+                                        aria-describedby="helpId"
+                                    />
+                                    <small id="helpId" class="text-white-50 form-text">Zorunlu Alan!!</small>
+                                </div>
                             </div>
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3 px-4">
-                                <label for="email" class="form-label text-uppercase fw-bold">Email :</label>
-                                <input
-                                    type="text"
-                                    name="mail"
-                                    id="email"
-                                    class="form-control"
-                                    placeholder="E-mail adresinizi giriniz."                                    
-                                />
-                                <small id="helpId" class="text-body-secondary form-text">
-                                    Zorunlu Alan!! E-mailinizi giriniz. Bu kutucuk '@' içermelidir. </small>
+                            <div class="col-12 col-md-12 col-lg-4 mb-1">
+                                <div class="tek-div-bg p-3 h-100 text-white">
+                                    <label for="email" class="form-label text-uppercase fw-bold">Email :</label>
+                                    <input
+                                        type="text"
+                                        name="mail"
+                                        id="email"
+                                        class="form-control"
+                                        placeholder="E-mail adresinizi giriniz."
+                                        aria-describedby="helpId"                                    
+                                    />
+                                    <small id="helpId" class="text-white-50 form-text">
+                                        Zorunlu Alan!! E-mailinizi giriniz. Bu kutucuk '@' içermelidir. </small>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-12 col-lg-4 mb-1">
+                                <div class="tek-div-bg p-3 h-100 text-white">
+                                    <label for="telNo" class="form-label text-uppercase fw-bold">telefon :</label>
+                                    <input 
+                                        type="tel" 
+                                        name="telefon" 
+                                        id="telNo" 
+                                        class="form-control" 
+                                        placeholder="05xxxxxxxxx"
+                                        aria-describedby="helpId"
+                                    />
+                                    <small id="helpId" class="form-text text-white-50">Sadece rakam giriniz.</small>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row mb-4">
-                            <div class="col-sm-6 col-md-3 px-3 mb-3" >
-                                <h5>Cinsiyetinizi Seçiniz :</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="cinsiyet" id="erkek">
-                                    <label class="form-check-label" for="erkek">Erkek</label>                                    
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="cinsiyet" id="kadin">
-                                    <label class="form-check-label" for="kadin">Kadın</label>                                    
+                        <div class="row mb-4 g-4">
+                            <div class="col-sm-12 col-md-6 col-lg-3 mb-1">
+                                <div class="tek-div-bg text-white p-3 h-100">
+                                    <h5>Cinsiyetinizi Seçiniz :</h5>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="cinsiyet" id="erkek">
+                                        <label class="form-check-label" for="erkek">Erkek</label>                                    
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="cinsiyet" id="kadin">
+                                        <label class="form-check-label" for="kadin">Kadın</label>                                    
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-12 col-sm-6 col-md-3 px-3 mb-3">
-                                <h5>Oynadığınız Oyunlar :</h5>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="oyunlar[]"
-                                        id="game1"
-                                        value="medieval2"
-                                    />
-                                    <label class="form-check-label" for="game1">Medieval II: Total War</label>
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="oyunlar[]"
-                                        id="game2"
-                                        value="shogun2"
-                                    />
-                                    <label class="form-check-label" for="game2">Total War: Shogun 2</label>
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="oyunlar[]"
-                                        id="game3"
-                                        value="warband"
-                                    />
-                                    <label class="form-check-label" for="game3">Mount & Blade: Warband</label>
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="oyunlar[]"
-                                        id="game4"
-                                        value="civ6"
-                                    />
-                                    <label class="form-check-label" for="game4">Civilization VI</label>
-                                </div>
-                                <div class="form-check">
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        name="oyunlar[]"
-                                        id="game5"
-                                        value="apex"
-                                    />
-                                    <label class="form-check-label" for="game5">Apex Legends</label>
+                            <div class="col-sm-12 col-md-6 col-lg-3 mb-1">
+                                <div class="tek-div-bg text-white p-3 h-100">
+                                    <h5>Oynadığınız Oyunlar :</h5>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            name="oyunlar[]"
+                                            id="game1"
+                                            value="medieval2"
+                                        />
+                                        <label class="form-check-label" for="game1">Medieval II: Total War</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            name="oyunlar[]"
+                                            id="game2"
+                                            value="shogun2"
+                                        />
+                                        <label class="form-check-label" for="game2">Total War: Shogun 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            name="oyunlar[]"
+                                            id="game3"
+                                            value="warband"
+                                        />
+                                        <label class="form-check-label" for="game3">Mount & Blade: Warband</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            name="oyunlar[]"
+                                            id="game4"
+                                            value="civ6"
+                                        />
+                                        <label class="form-check-label" for="game4">Civilization VI</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="checkbox"
+                                            name="oyunlar[]"
+                                            id="game5"
+                                            value="apex"
+                                        />
+                                        <label class="form-check-label" for="game5">Apex Legends</label>
+                                    </div>
                                 </div>                                
                             </div>
 
-                            <div class="col-sm-12 col-sm-6 col-md-3 px-3 mb-3">
-                                <h5 class="form-label">Kaldığınız Yer :</h5>
-                                <select
-                                    class="form-select iletisim-kutu" 
-                                    name="konaklama"
-                                    id="konaklamaYeri"
-                                >
-                                    <option selected disabled>Seçiniz...</option>
-                                    <option value="kyk">KYK Yurdu</option>
-                                    <option value="ozel">Özel Yurt</option>
-                                    <option value="ogrenci_evi">Öğrenci Evi</option>
-                                    <option value="aile">Aile Evi</option>
-                                </select>                                                                
+                            <div class="col-sm-12 col-md-6 col-lg-3 mb-1">
+                                <div class="tek-div-bg text-white p-3 h-100">
+                                    <h5 class="form-label">Kaldığınız Yer :</h5>
+                                    <select
+                                        class="form-select iletisim-kutu" 
+                                        name="konaklama"
+                                        id="konaklamaYeri"
+                                    >
+                                        <option selected disabled>Seçiniz...</option>
+                                        <option value="kyk">KYK Yurdu</option>
+                                        <option value="ozel">Özel Yurt</option>
+                                        <option value="ogrenci_evi">Öğrenci Evi</option>
+                                        <option value="aile">Aile Evi</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6 col-lg-3 mb-1 ">
+                                <div class="tek-div-bg text-white p-3 h-100">
+                                    <h5 class="form-label">Üniversite :</h5>
+                                    <select
+                                        class="form-select iletisim-kutu" 
+                                        name="Öğrenim"
+                                        id="üniAdi"
+                                    >
+                                        <option selected disabled>Seçiniz...</option>
+                                        <option value="saü">SAÜ</option>
+                                        <option value="subü">SUBÜ</option>
+                                    </select>  
+                                </div>                                                              
+                            </div>
+                        </div>
+
+                        <div class="row mb-4 g-4">
+                            <div class="col-12">
+                                <div class="tek-div-bg text-white p-4 h-100">
+                                    <label for="mesajiniz" class="form-label fw-bold">
+                                        <h5>Proje Hakkındaki Düşünceleriniz :</h5>
+                                    </label>
+                                    <textarea 
+                                        class="form-control" 
+                                        name="mesaj" 
+                                        id="mesajiniz" 
+                                        rows="5"
+                                        placeholder="İletmek istediğiniz mesajınızı buraya yazınız..."
+                                    ></textarea>
+                                    <small class="text-white-50 form-text">
+                                        Lütfen görüşlerinizi detaylıca belirtiniz.
+                                    </small>
+                                </div>
+                                
                             </div>
                         </div>
                     </form>                    
