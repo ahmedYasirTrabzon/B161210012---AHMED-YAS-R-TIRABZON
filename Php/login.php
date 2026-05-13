@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     elseif ($gelenEmail == $dogruEmail && $gelenSifre == $dogruSifre) {
         echo "Hoşgeldiniz " . $ogrenciNo;
         echo "<br><br>";
-        echo "<a href='../login.html'><button type='button'>Geri Dön<botton>";
+        echo "<a href='../Iletisim.html' class='btn btn-info fw-bold text-white'>Geri Dön</a>";
     }
 
     else {

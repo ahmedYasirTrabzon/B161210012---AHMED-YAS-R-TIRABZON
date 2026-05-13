@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Ahmed Yasir TIRABZON">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <link rel="stylesheet" href="../Css/styleAll.css"> 
+        <link rel="stylesheet" href="../Bootstrap/bootstrap.min.css">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+        crossorigin="anonymous"> -->
+        <!-- Google Fonts: Poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">              
+        <title>Kişisel Bilgiler</title>
+    </head>
+
+    <body class="body-style d-flex flex-column min-vh-100" id="iletisim-arka-plan">
+
+        <!--Menü-->
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-lg navbar-style">
+        <!--<nav class="nav flex-md-column bg-info vh-100 p-5 ps-1 pb-3 shadow-lg" style="width: 250px;">-->
+            <div class="container-fluid">
+                <a class="navbar-brand ps-3" href=anasayfa.html>
+                    <img src="../img/Profil.jpeg" alt="Profil" class="profil-style">
+                    AYT
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                 </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="anasayfa.html">Anasayfa/Hakkımda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ozgecmis.html">Özgeçmiş/CV</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hatay.html">Hatay</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kulturMiras.html">Kültürel Miras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="IlgiAlanlarım.html">İlgi Alanlarım</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Iletisim.html">İletişim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link  text-success">Giriş Sayfası
+                                <i class="fas fa-sign-in-alt"></i>
+                            </a>
+                        </li>       
+                    </ul>
+                </div>
+            </div>            
+        </nav>
+
+        <section class="flex-grow-1 d-flex justify-content-center align-items-center py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div col-lg-8>
+                        <div class="tek-div-bg p-4 shadow-lg">
+                            
+                            <h3 class="text-center mb-4">Kişisel Bilgiler</h3>
+
+                            <div
+                                class="table-responsive"
+                            >
+                                <table
+                                    class="table table-borderless"
+                                >                                   
+                                    <tbody>
+                                        <tr class="">
+                                            <td scope="row"><h3>Ad/Soyad :</h3></td>
+                                            <td ><?php echo isset($_GET['adSoyad']) ? htmlspecialchars($_GET['adSoyad']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td scope="row"><h3>Email Adresi :</h3></td>
+                                            <td ><?php echo isset($_GET['mail']) ? htmlspecialchars($_GET['mail']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td scope="row"><h3>Telefon Numarası :</h3></td>
+                                            <td ><?php echo isset($_GET['telefon']) ? htmlspecialchars($_GET['telefon']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td scope="row"><h3>Cinsiyet :</h3></td>
+                                            <td ><?php echo isset($_GET['cinsiyet']) ? htmlspecialchars($_GET['cinsiyet']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td scope="row"><h3>İkamet Durumu :</h3></td>
+                                            <td ><?php echo isset($_GET['konaklama']) ? htmlspecialchars($_GET['konaklama']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td scope="row"><h3>Üniversite :</h3></td>
+                                            <td ><?php echo isset($_GET['ogrenim']) ? htmlspecialchars($_GET['ogrenim']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr class="">
+                                            <td scope="row"><h3>Proje Hakkında Fikirleriniz :</h3></td>
+                                            <td ><?php echo isset($_GET['mesaj']) ? htmlspecialchars($_GET['mesaj']) : '-'; ?> </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="vertical-align: top;"><h3>Ortak Oynadığımız Oyunlar :</h3></td>
+                                            <td>
+                                                <?php 
+                                                if (isset($_GET['oyunlar']) && is_array($_GET['oyunlar'])) {
+                                                    foreach ($_GET['oyunlar'] as $oyun) {
+                                                        echo htmlspecialchars($oyun) . "<br>";
+                                                    }
+                                                } else {
+                                                    echo "Sanırım oyun zevklerimiz uyuşmadı...";
+                                                }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <?php echo "<a href='../Iletisim.html' class='btn btn-info fw-bold text-white'>Geri Dön</a>"; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-3 text-white text-center footer-style">
+            <div>
+                <p>Ahmed Yasir Tırabzon 2026 </p>
+            </div>
+            <div>
+                <a href="https://github.com/ahmedYasirTrabzon" class="link-light text-decoration-none btn btn-primary"> 
+                    <i class="fab fa-brands fa-github"></i> Github</a>
+                <a href="https://x.com/tirabzon2011" class="link-light text-decoration-none btn btn-primary">
+                    <i class="fab fa-brands fa-twitter"></i> X</a>
+                <a href="https://www.instagram.com/ahmedyasirtirabzon/" class="link-light text-decoration-none btn btn-primary">
+                    <i class="fab fa-brands fa-instagram"></i> İnstagram</a>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="Bootstrap/bootstrap.bundle.min.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+        crossorigin="anonymous"></script>-->
+    </body>
+</html>

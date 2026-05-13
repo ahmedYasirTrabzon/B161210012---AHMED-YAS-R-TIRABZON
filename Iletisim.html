@@ -66,7 +66,7 @@
             </div>            
         </nav>
 
-        <section class="flex-grow-1 justify-content-center align-items-center ">
+        <section id="iletisim-app" class="flex-grow-1 justify-content-center align-items-center ">
             <div class="container">
                 <div class="row my-2 g-4">
                     <div class="col-12 mb-1">
@@ -74,13 +74,14 @@
                             <h2 class="text-center">İletişim Bİlgileri</h2>
                         </div>
                     </div>
-                    <form>
+                    <form form id="iletisimForm" action="Php/iletisim.php" method="get" onsubmit="return formkontrol()">
                         <div class="row mb-4 g-4">
                             <div class="col-12 col-md-12 col-lg-4 mb-1">
                                 <div class="tek-div-bg p-3 h-100 text-white">
                                     <label for="isim" class="form-label text-uppercase fw-bold">ad / soyad :</label>
                                     <input
                                         type="text"
+                                        v-model="form.adSoyad"
                                         name="adSoyad"
                                         id="isim"
                                         class="form-control"
@@ -96,6 +97,7 @@
                                     <label for="email" class="form-label text-uppercase fw-bold">Email :</label>
                                     <input
                                         type="text"
+                                        v-model="form.email"
                                         name="mail"
                                         id="email"
                                         class="form-control"
@@ -111,14 +113,17 @@
                                 <div class="tek-div-bg p-3 h-100 text-white">
                                     <label for="telNo" class="form-label text-uppercase fw-bold">telefon :</label>
                                     <input 
-                                        type="tel" 
+                                        type="tel"
+                                        v-model="form.telefon" 
                                         name="telefon" 
                                         id="telNo" 
                                         class="form-control" 
                                         placeholder="05xxxxxxxxx"
                                         aria-describedby="helpId"
                                     />
-                                    <small id="helpId" class="form-text text-white-50">Sadece rakam giriniz.</small>
+                                    <small id="helpId" class="form-text text-white-50">
+                                        Sadece rakam giriniz. Başlangıcı '0' ile yapınız!!
+                                    </small>
                                 </div>
                             </div>
                         </div>
@@ -128,11 +133,21 @@
                                 <div class="tek-div-bg text-white p-3 h-100">
                                     <h5>Cinsiyetinizi Seçiniz :</h5>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="cinsiyet" id="erkek">
+                                        <input 
+                                            class="form-check-input" 
+                                            type="radio" 
+                                            v-model="form.cinsiyet"
+                                            name="cinsiyet" 
+                                            id="erkek">
                                         <label class="form-check-label" for="erkek">Erkek</label>                                    
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="cinsiyet" id="kadin">
+                                        <input 
+                                            class="form-check-input" 
+                                            type="radio"
+                                            v-model="form.cinsiyet" 
+                                            name="cinsiyet" 
+                                            id="kadin">
                                         <label class="form-check-label" for="kadin">Kadın</label>                                    
                                     </div>
                                 </div>
@@ -198,7 +213,8 @@
                                 <div class="tek-div-bg text-white p-3 h-100">
                                     <h5 class="form-label">Kaldığınız Yer :</h5>
                                     <select
-                                        class="form-select iletisim-kutu" 
+                                        class="form-select iletisim-kutu"
+                                        v-model="form.konaklama" 
                                         name="konaklama"
                                         id="konaklamaYeri"
                                     >
@@ -215,13 +231,14 @@
                                 <div class="tek-div-bg text-white p-3 h-100">
                                     <h5 class="form-label">Üniversite :</h5>
                                     <select
-                                        class="form-select iletisim-kutu" 
-                                        name="Öğrenim"
+                                        class="form-select iletisim-kutu"
+                                        v-model="form.universite" 
+                                        name="ogrenim"
                                         id="üniAdi"
                                     >
                                         <option selected disabled>Seçiniz...</option>
-                                        <option value="saü">SAÜ</option>
-                                        <option value="subü">SUBÜ</option>
+                                        <option value="sau">SAÜ</option>
+                                        <option value="subu">SUBÜ</option>
                                     </select>  
                                 </div>                                                              
                             </div>
@@ -234,7 +251,8 @@
                                         <h5>Proje Hakkındaki Düşünceleriniz :</h5>
                                     </label>
                                     <textarea 
-                                        class="form-control" 
+                                        class="form-control"
+                                        v-model="form.mesaj" 
                                         name="mesaj" 
                                         id="mesajiniz" 
                                         rows="5"
@@ -245,6 +263,33 @@
                                     </small>
                                 </div>
                                 
+                            </div>
+                        </div>
+
+                        <div class="row mb-5 g-4 justify-content-center">
+                            <div class="col-2">
+                                <div class="tek-div-bg p-4 h-100 text-center">
+                                    <button type="submit" class="btn btn-info px-2 me-2 w-100 fw-bold">
+                                        JS ile GÖNDER
+                                    </button>
+                                </div>                                                                
+                            </div>
+
+                            <div class="col-2">
+                                <div class="tek-div-bg p-4 h-100 text-center">
+                                    <button type="button" @click="denetleVue" 
+                                    class="btn btn-dark px-2 me-2 w-100 fw-bold">
+                                        Vue ile Denetle
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="tek-div-bg p-4 h-100 text-center">
+                                    <button type="reset" class="btn btn-danger px-2 w-100 fw-bold">
+                                        TEMİZLE
+                                    </button>
+                                </div>                            
                             </div>
                         </div>
                     </form>                    
@@ -265,6 +310,10 @@
                     <i class="fab fa-brands fa-instagram"></i> İnstagram</a>
             </div>
         </footer>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+        <script src="Js/iletisim.js"></script>
 
         <script type="text/javascript" src="Bootstrap/bootstrap.bundle.min.js"></script>
         <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
