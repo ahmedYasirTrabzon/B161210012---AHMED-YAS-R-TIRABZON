@@ -67,51 +67,51 @@
         </nav>
 
         <section class="flex-grow-1 d-flex justify-content-center align-items-center py-5">
-            <div class="container">
+            <div class="container tek-div-bg">
                 <div class="row justify-content-center">
                     <div col-lg-8>
-                        <div class="tek-div-bg p-4 shadow-lg">
+                        <div class="p-4">
                             
-                            <h3 class="text-center mb-4">Kişisel Bilgiler</h3>
+                            <h1 class="text-center text-white iletisim-tablo-baslik mb-4">Kişisel Bilgiler</h1>
 
                             <div
                                 class="table-responsive"
                             >
                                 <table
-                                    class="table table-borderless"
+                                    class="table table-borderless iletisim-tablo-bg"
                                 >                                   
                                     <tbody>
                                         <tr class="">
-                                            <td scope="row"><h3>Ad/Soyad :</h3></td>
+                                            <td ><h3>Ad/Soyad :</h3></td>
                                             <td ><?php echo isset($_GET['adSoyad']) ? htmlspecialchars($_GET['adSoyad']) : '-'; ?> </td>
                                         </tr>
                                         <tr class="">
-                                            <td scope="row"><h3>Email Adresi :</h3></td>
+                                            <td ><h3>Email Adresi :</h3></td>
                                             <td ><?php echo isset($_GET['mail']) ? htmlspecialchars($_GET['mail']) : '-'; ?> </td>
                                         </tr>
                                         <tr class="">
-                                            <td scope="row"><h3>Telefon Numarası :</h3></td>
+                                            <td ><h3>Telefon Numarası :</h3></td>
                                             <td ><?php echo isset($_GET['telefon']) ? htmlspecialchars($_GET['telefon']) : '-'; ?> </td>
                                         </tr>
                                         <tr class="">
-                                            <td scope="row"><h3>Cinsiyet :</h3></td>
+                                            <td ><h3>Cinsiyet :</h3></td>
                                             <td ><?php echo isset($_GET['cinsiyet']) ? htmlspecialchars($_GET['cinsiyet']) : '-'; ?> </td>
                                         </tr>
                                         <tr class="">
-                                            <td scope="row"><h3>İkamet Durumu :</h3></td>
+                                            <td ><h3>İkamet Durumu :</h3></td>
                                             <td ><?php echo isset($_GET['konaklama']) ? htmlspecialchars($_GET['konaklama']) : '-'; ?> </td>
                                         </tr>
                                         <tr class="">
-                                            <td scope="row"><h3>Üniversite :</h3></td>
+                                            <td ><h3>Üniversite :</h3></td>
                                             <td ><?php echo isset($_GET['ogrenim']) ? htmlspecialchars($_GET['ogrenim']) : '-'; ?> </td>
                                         </tr>
                                         <tr class="">
-                                            <td scope="row"><h3>Proje Hakkında Fikirleriniz :</h3></td>
+                                            <td ><h3>Proje Hakkında Fikirleriniz :</h3></td>
                                             <td ><?php echo isset($_GET['mesaj']) ? htmlspecialchars($_GET['mesaj']) : '-'; ?> </td>
                                         </tr>
                                         <tr>
                                             <td style="vertical-align: top;"><h3>Ortak Oynadığımız Oyunlar :</h3></td>
-                                            <td>
+                                            <td >
                                                 <?php 
                                                 if (isset($_GET['oyunlar']) && is_array($_GET['oyunlar'])) {
                                                     foreach ($_GET['oyunlar'] as $oyun) {
@@ -126,11 +126,17 @@
                                     </tbody>
                                 </table>
                             </div>
-                            
-                            <?php echo "<a href='../Iletisim.html' class='btn btn-info fw-bold text-white'>Geri Dön</a>"; ?>
+                                                       
                         </div>
                     </div>
                 </div>
+
+                <div class="row justify-content-center mb-5">
+                    <div class="col-10 col-sm-6 col-md-4 col-lg-3 d-grid">
+                        <a href="../Iletisim.html" class="btn btn-info fw-bold text-white">Geri Dön</a>  
+                    </div>                                                  
+                </div> 
+
             </div>
         </section>
 

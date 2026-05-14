@@ -138,7 +138,8 @@
                                             type="radio" 
                                             v-model="form.cinsiyet"
                                             name="cinsiyet" 
-                                            id="erkek">
+                                            id="erkek"
+                                            value="Erkek">
                                         <label class="form-check-label" for="erkek">Erkek</label>                                    
                                     </div>
                                     <div class="form-check">
@@ -147,7 +148,8 @@
                                             type="radio"
                                             v-model="form.cinsiyet" 
                                             name="cinsiyet" 
-                                            id="kadin">
+                                            id="kadin"
+                                            value="Kadın">
                                         <label class="form-check-label" for="kadin">Kadın</label>                                    
                                     </div>
                                 </div>
@@ -162,7 +164,7 @@
                                             type="checkbox"
                                             name="oyunlar[]"
                                             id="game1"
-                                            value="medieval2"
+                                            value="Medieval II: Total War"
                                         />
                                         <label class="form-check-label" for="game1">Medieval II: Total War</label>
                                     </div>
@@ -172,7 +174,7 @@
                                             type="checkbox"
                                             name="oyunlar[]"
                                             id="game2"
-                                            value="shogun2"
+                                            value="Total War: Shogun 2"
                                         />
                                         <label class="form-check-label" for="game2">Total War: Shogun 2</label>
                                     </div>
@@ -182,7 +184,7 @@
                                             type="checkbox"
                                             name="oyunlar[]"
                                             id="game3"
-                                            value="warband"
+                                            value="Mount & Blade: Warband"
                                         />
                                         <label class="form-check-label" for="game3">Mount & Blade: Warband</label>
                                     </div>
@@ -192,7 +194,7 @@
                                             type="checkbox"
                                             name="oyunlar[]"
                                             id="game4"
-                                            value="civ6"
+                                            value="Civilization VI"
                                         />
                                         <label class="form-check-label" for="game4">Civilization VI</label>
                                     </div>
@@ -202,7 +204,7 @@
                                             type="checkbox"
                                             name="oyunlar[]"
                                             id="game5"
-                                            value="apex"
+                                            value="Apex Legends"
                                         />
                                         <label class="form-check-label" for="game5">Apex Legends</label>
                                     </div>
@@ -216,13 +218,13 @@
                                         class="form-select iletisim-kutu"
                                         v-model="form.konaklama" 
                                         name="konaklama"
-                                        id="konaklamaYeri"
+                                        id="konaklamaYeri"                                        
                                     >
                                         <option selected disabled>Seçiniz...</option>
-                                        <option value="kyk">KYK Yurdu</option>
-                                        <option value="ozel">Özel Yurt</option>
-                                        <option value="ogrenci_evi">Öğrenci Evi</option>
-                                        <option value="aile">Aile Evi</option>
+                                        <option value="KYK Yurdu">KYK Yurdu</option>
+                                        <option value="Özel Yurt">Özel Yurt</option>
+                                        <option value="Öğrenci Evi">Öğrenci Evi</option>
+                                        <option value="Aile Evi">Aile Evi</option>
                                     </select>
                                 </div>
                             </div>
@@ -237,8 +239,8 @@
                                         id="üniAdi"
                                     >
                                         <option selected disabled>Seçiniz...</option>
-                                        <option value="sau">SAÜ</option>
-                                        <option value="subu">SUBÜ</option>
+                                        <option value="SAÜ">SAÜ</option>
+                                        <option value="SUBÜ">SUBÜ</option>
                                     </select>  
                                 </div>                                                              
                             </div>
